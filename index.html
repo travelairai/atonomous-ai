@@ -1,200 +1,1027 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous.ai - The Pinnacle of AI-Powered Autonomy</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            color: #fff;
-            background-color: #000;
-        }
-        .hero {
-            background-image: url('https://www.shutterstock.com/image-photo/futuristic-cityscape-selfdriving-cars-robots-260nw-2656851071.jpg'); /* Updated to include self-driving cars and robots for standout AI theme */
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        .hero h1 {
-            font-size: 4em;
-            margin-bottom: 0.5em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: 2em;
-        }
-        .cta-button {
-            background: linear-gradient(45deg, #ffd700, #c0a000);
-            color: #000;
-            padding: 1em 2em;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: transform 0.3s;
-        }
-        .cta-button:hover {
-            transform: scale(1.05);
-        }
-        section {
-            padding: 5em 2em;
-            text-align: center;
-        }
-        .features, .testimonials, .faq {
-            background: #111;
-        }
-        .products {
-            background: #222;
-        }
-        h2 {
-            font-size: 3em;
-            margin-bottom: 1em;
-            color: #ffd700;
-        }
-        .feature-grid, .product-grid {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .feature, .product {
-            max-width: 300px;
-            margin: 1em;
-            background: #333;
-            padding: 2em;
-            border-radius: 10px;
-        }
-        .feature h3, .product h3 {
-            color: #ffd700;
-        }
-        .testimonial {
-            max-width: 600px;
-            margin: 2em auto;
-            font-style: italic;
-        }
-        footer {
-            background: #000;
-            padding: 2em;
-            text-align: center;
-            font-size: 0.8em;
-        }
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-        .faq-item {
-            max-width: 800px;
-            margin: 2em auto;
-            text-align: left;
-        }
-        .faq-item h3 {
-            color: #ffd700;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ATONOMOUS.AI — The Luxury of Autonomy</title>
+
+  <meta name="description" content="ATONOMOUS.AI — The luxury of autonomy. Autonomous intelligence for real-world systems, enterprise agents, robotics, and resilient decision engines." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="ATONOMOUS.AI — The Luxury of Autonomy" />
+  <meta property="og:description" content="Autonomous intelligence engineered for real-world systems. Strategic access for investors, partners, and enterprises." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#070A0F;
+      --bg2:#0A1022;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.09);
+      --stroke:rgba(255,255,255,.12);
+      --text:#E9EDF5;
+      --muted:rgba(233,237,245,.74);
+      --muted2:rgba(233,237,245,.56);
+      --accent:#7CA7FF;
+      --accent2:#A7F0FF;
+      --gold:#D9B46B;
+      --ok:#6EF2B4;
+      --warn:#FFD36E;
+      --bad:#FF7C8B;
+      --shadow: 0 30px 85px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(124,167,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 75% 18%, rgba(167,240,255,.16), transparent 55%),
+        radial-gradient(900px 700px at 65% 92%, rgba(217,180,107,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+
+    /* subtle animated grid for “autonomy lab” vibe */
+    .bg-grid{
+      position:fixed; inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 58px 58px;
+      opacity:.16;
+      mask-image: radial-gradient(closest-side at 50% 30%, rgba(0,0,0,1), rgba(0,0,0,.1), transparent 85%);
+      pointer-events:none;
+      animation: drift 18s linear infinite;
+    }
+    @keyframes drift { from{transform:translate3d(0,0,0)} to{transform:translate3d(-58px,-58px,0)} }
+
+    canvas#particles{
+      position:fixed; inset:0; z-index:0;
+      pointer-events:none;
+      opacity:.58;
+    }
+
+    .wrap{
+      position:relative; z-index:1;
+      max-width:var(--max);
+      margin:0 auto;
+      padding: 28px 18px 88px;
+    }
+
+    /* Sticky top nav */
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 14px 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(10,14,24,.42);
+      backdrop-filter: blur(14px);
+      border-radius: 999px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+      position:sticky;
+      top:16px;
+      z-index:5;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      letter-spacing:.4px;
+      user-select:none;
+    }
+    .mark{
+      width:28px; height:28px; border-radius:10px;
+      background:
+        radial-gradient(circle at 30% 30%, var(--accent2), transparent 58%),
+        radial-gradient(circle at 70% 70%, var(--gold), transparent 58%),
+        linear-gradient(135deg, rgba(124,167,255,.35), rgba(255,255,255,.06));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    }
+    .brand strong{font-weight:600}
+    .brand small{display:block;font-size:12px;color:var(--muted2);margin-top:2px}
+
+    .nav{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      white-space:nowrap;
+    }
+    .nav a:hover{
+      color:var(--text);
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      text-decoration:none;
+      font-weight:500;
+      font-size:13px;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09)}
+    .btn.primary{
+      border-color: rgba(124,167,255,.55);
+      background: linear-gradient(135deg, rgba(124,167,255,.30), rgba(255,255,255,.06));
+    }
+
+    /* Hero */
+    .hero{
+      padding: 86px 10px 40px;
+      text-align:center;
+      position:relative;
+    }
+    .kicker{
+      display:inline-flex;
+      gap:10px; align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: var(--ok);
+      box-shadow: 0 0 22px rgba(110,242,180,.55);
+    }
+
+    h1{
+      margin:0 auto;
+      max-width: 1020px;
+      font-size: clamp(36px, 5.4vw, 70px);
+      letter-spacing: -1.6px;
+      line-height: 1.03;
+      font-weight: 600;
+    }
+    .sub{
+      margin: 16px auto 18px;
+      max-width: 860px;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .ctaRow{
+      display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+      margin: 22px 0 22px;
+    }
+
+    .miniRow{
+      display:flex; justify-content:center; flex-wrap:wrap;
+      gap:10px;
+      margin-top: 8px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .pill{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      padding: 8px 10px;
+    }
+
+    /* KPI ticker */
+    .ticker{
+      margin: 26px auto 0;
+      max-width: 980px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .tickerBar{
+      display:flex;
+      gap:18px;
+      padding: 12px 14px;
+      white-space: nowrap;
+      animation: scroll 22s linear infinite;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .ticker strong{color:var(--text); font-weight:600}
+    @keyframes scroll{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
+
+    /* Sections */
+    .section{
+      margin-top: 70px;
+      padding: 26px 6px;
+    }
+    .section h2{
+      margin:0 0 12px;
+      font-size: 22px;
+      letter-spacing: -.6px;
+      font-weight: 600;
+    }
+    .section p.lead{
+      margin:0 0 18px;
+      max-width: 900px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* Cards / grids */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .card{
+      grid-column: span 6;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: 18px 18px;
+      overflow:hidden;
+      position:relative;
+      transform: translateY(10px);
+      opacity: 0;
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .card.reveal{opacity:1; transform: translateY(0)}
+    .card .title{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      margin-bottom: 10px;
+    }
+    .badge{
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .card h3{
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: -.3px;
+      font-weight: 600;
+    }
+    .card p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .card.full{grid-column: span 12}
+    .card.third{grid-column: span 4}
+    @media (max-width: 900px){
+      .card{grid-column: span 12}
+      .card.third{grid-column: span 12}
+    }
+
+    /* Panels / widgets */
+    .panel{
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .widgetRow{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px){ .widgetRow{grid-template-columns:1fr} }
+
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    }
+
+    .modes{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin: 12px 0 14px;
+    }
+    .chip{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      cursor:pointer;
+      user-select:none;
+      transition: background .15s ease, transform .15s ease, border-color .15s ease;
+    }
+    .chip:hover{transform: translateY(-1px); background: rgba(255,255,255,.07)}
+    .chip.active{
+      color: var(--text);
+      border-color: rgba(124,167,255,.55);
+      background: linear-gradient(135deg, rgba(124,167,255,.25), rgba(255,255,255,.05));
+    }
+
+    .bars{display:grid; gap:10px; margin-top: 10px;}
+    .bar{
+      display:grid;
+      grid-template-columns: 130px 1fr 52px;
+      gap: 10px;
+      align-items:center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .track{
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+    }
+    .fill{
+      height: 100%;
+      width: 50%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(124,167,255,.75), rgba(167,240,255,.55));
+      box-shadow: 0 0 25px rgba(124,167,255,.25);
+      transition: width .35s ease;
+    }
+    .val{justify-self:end; color: var(--text); font-variant-numeric: tabular-nums;}
+
+    /* Live system panel */
+    .sys{
+      display:grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .sysLine{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(10,14,24,.45);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .light{
+      display:flex; align-items:center; gap: 8px;
+      color: var(--text);
+    }
+    .led{
+      width:10px; height:10px; border-radius: 999px;
+      background: var(--ok);
+      box-shadow: 0 0 18px rgba(110,242,180,.45);
+    }
+    .led.warn{background:var(--warn); box-shadow:0 0 18px rgba(255,211,110,.45);}
+    .led.bad{background:var(--bad); box-shadow:0 0 18px rgba(255,124,139,.45);}
+
+    /* Simulator */
+    .sim{
+      display:grid;
+      gap: 10px;
+    }
+    .simRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 560px){ .simRow{grid-template-columns:1fr} }
+
+    select, input, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(10,14,24,.55);
+      color: var(--text);
+      outline:none;
+      font-family: inherit;
+    }
+    textarea{min-height: 120px; resize: vertical;}
+
+    .simOut{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    /* Form */
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 720px){ .formGrid{grid-template-columns:1fr} }
+
+    .formActions{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .fine{
+      font-size:12px;
+      color: var(--muted2);
+      line-height: 1.55;
+    }
+    .status{
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq{
+      display:grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    details{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding: 12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight: 600;
+      letter-spacing: -.2px;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 74px;
+      padding: 26px 6px 10px;
+      color: var(--muted2);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap: 10px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+  </style>
 </head>
+
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Autonomous.ai</h1>
-            <p>Elevate Your World with Unparalleled AI Intelligence – Robots, Self-Driving Mastery, and Beyond</p>
-            <a href="#contact" class="cta-button">Discover Luxury Autonomy</a>
-        </div>
-    </header>
+  <div class="bg-grid"></div>
+  <canvas id="particles"></canvas>
 
-    <section class="features">
-        <h2>Exquisite Features</h2>
-        <div class="feature-grid">
-            <div class="feature">
-                <h3>Intelligent Robotics</h3>
-                <p>Crafted for precision, our AI robots redefine efficiency in a luxurious framework.</p>
-            </div>
-            <div class="feature">
-                <h3>Self-Driving Excellence</h3>
-                <p>Experience seamless autonomy with vehicles that anticipate your every need.</p>
-            </div>
-            <div class="feature">
-                <h3>Advanced AI Ecosystems</h3>
-                <p>Integrate cutting-edge AI for a life of sophistication and innovation.</p>
-            </div>
+  <div class="wrap">
+
+    <div class="top">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <strong>ATONOMOUS.AI</strong>
+          <small>The luxury of autonomy</small>
         </div>
+      </div>
+      <div class="nav">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#luxury">Luxury Stack</a>
+        <a href="#simulator">Simulator</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn primary">Strategic Access</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Autonomous intelligence engineered for real-world systems</div>
+
+      <h1>ATONOMOUS.AI<br/>Luxury autonomy, built to scale.</h1>
+
+      <p class="sub">
+        We build autonomous AI that can perceive, decide, and act—across enterprise operations and physical environments—engineered for reliability,
+        governance, and high-stakes deployment.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn primary" href="#contact">Request Investor / Partner Access</a>
+        <a class="btn" href="#luxury">Explore the Luxury Stack</a>
+      </div>
+
+      <div class="miniRow">
+        <span class="pill">Governed autonomy</span>
+        <span class="pill">Mission-critical resilience</span>
+        <span class="pill">Enterprise-grade alignment</span>
+        <span class="pill">No public emails</span>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="tickerBar">
+          <span><strong>Signal:</strong> deployment realism</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> audit-ready control</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> autonomous agents</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> robotics & devices</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> infrastructure autonomy</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> safety by design</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> deployment realism</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> audit-ready control</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> autonomous agents</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> robotics & devices</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> infrastructure autonomy</span>
+          <span>•</span>
+          <span><strong>Signal:</strong> safety by design</span>
+          <span>•</span>
+        </div>
+      </div>
     </section>
 
-    <section class="products">
-        <h2>Premium Offerings</h2>
-        <div class="product-grid">
-            <div class="product">
-                <h3>Elite Robot Suite</h3>
-                <p>$100,000 – Bespoke AI companions for the discerning elite.</p>
-            </div>
-            <div class="product">
-                <h3>Signature Self-Drive System</h3>
-                <p>$100,000 – Transform your journey into a statement of luxury.</p>
-            </div>
-            <div class="product">
-                <h3>Ultimate AI Platform</h3>
-                <p>$100,000 – The apex of intelligent living, tailored to perfection.</p>
-            </div>
+    <!-- CAPABILITIES -->
+    <section id="capabilities" class="section">
+      <h2>Core capabilities</h2>
+      <p class="lead">
+        Autonomy is not automation. Autonomy is intelligence with agency—built with discipline: safety, resilience, and control.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="title"><h3>Autonomous Decision Engines</h3><span class="badge">real-time reasoning</span></div>
+          <p>Decision systems built to operate under uncertainty—balancing speed, constraints, and risk in dynamic environments.</p>
         </div>
+
+        <div class="card">
+          <div class="title"><h3>Self-Learning Architectures</h3><span class="badge">adaptive intelligence</span></div>
+          <p>Feedback and learning pathways that improve performance while remaining policy-bounded and auditable.</p>
+        </div>
+
+        <div class="card">
+          <div class="title"><h3>Enterprise Autonomous Agents</h3><span class="badge">operational autonomy</span></div>
+          <p>Agents designed for measurable execution—workflow autonomy with guardrails, traceability, and governance.</p>
+        </div>
+
+        <div class="card">
+          <div class="title"><h3>Physical & Robotic Autonomy</h3><span class="badge">machine intelligence</span></div>
+          <p>Autonomy layers for robots and devices operating in the physical world—focused on safe action selection.</p>
+        </div>
+
+        <div class="card full">
+          <div class="title"><h3>Human-Aligned Control</h3><span class="badge">governance by design</span></div>
+          <p>
+            Luxury autonomy requires trust: decision traces, policy constraints, override mechanisms, and fail-safe modes—engineered into the system, not bolted on later.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="testimonials">
-        <h2>What Our Elite Clients Say</h2>
-        <div class="testimonial">
-            <p>"Autonomous.ai has revolutionized my existence – pure luxury in motion."</p>
-            <cite>- Visionary Entrepreneur</cite>
+    <!-- LUXURY + WIDGETS -->
+    <section id="luxury" class="section">
+      <h2>The Luxury Autonomy Stack</h2>
+      <p class="lead">
+        Luxury means the system feels inevitable: calm under pressure, precise in execution, secure by default, and built for scale.
+      </p>
+
+      <div class="widgetRow">
+        <!-- Mode selector + meters -->
+        <div class="panel">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+            <div>
+              <div class="mono" style="color:var(--muted2);font-size:12px;">AUTONOMY MODE</div>
+              <div style="font-weight:600;letter-spacing:-.3px;font-size:16px;margin-top:4px;">Select a deployment profile</div>
+            </div>
+            <span class="badge">interactive widget</span>
+          </div>
+
+          <div class="modes" id="modes">
+            <div class="chip active" data-mode="investor">Investor Preview</div>
+            <div class="chip" data-mode="enterprise">Enterprise Ops</div>
+            <div class="chip" data-mode="robotics">Robotics / Devices</div>
+            <div class="chip" data-mode="infrastructure">Critical Infrastructure</div>
+          </div>
+
+          <div class="bars" id="bars">
+            <div class="bar"><span>Reliability</span><div class="track"><div class="fill" id="bReliability"></div></div><span class="val" id="vReliability">92</span></div>
+            <div class="bar"><span>Adaptability</span><div class="track"><div class="fill" id="bAdaptability"></div></div><span class="val" id="vAdaptability">86</span></div>
+            <div class="bar"><span>Safety</span><div class="track"><div class="fill" id="bSafety"></div></div><span class="val" id="vSafety">94</span></div>
+            <div class="bar"><span>Governance</span><div class="track"><div class="fill" id="bGovernance"></div></div><span class="val" id="vGovernance">90</span></div>
+          </div>
+
+          <p style="margin-top:14px;color:var(--muted);font-size:14px;line-height:1.7;">
+            <strong style="color:var(--text);font-weight:600;">Luxury autonomy</strong> is the experience of a system that performs with composure—optimized for confidence, not noise.
+          </p>
         </div>
-        <div class="testimonial">
-            <p>"The self-driving experience is unparalleled; it's like having the future at your command."</p>
-            <cite>- Tech Magnate</cite>
+
+        <!-- Live system status -->
+        <div class="panel">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+            <div>
+              <div class="mono" style="color:var(--muted2);font-size:12px;">LIVE SYSTEM</div>
+              <div style="font-weight:600;letter-spacing:-.3px;font-size:16px;margin-top:4px;">Operational posture (demo)</div>
+            </div>
+            <span class="badge">dynamic widget</span>
+          </div>
+
+          <div class="sys" id="sys">
+            <div class="sysLine">
+              <div class="light"><span class="led" id="led1"></span> Policy Engine</div>
+              <div class="mono" id="st1">nominal</div>
+            </div>
+            <div class="sysLine">
+              <div class="light"><span class="led" id="led2"></span> Perception Layer</div>
+              <div class="mono" id="st2">stable</div>
+            </div>
+            <div class="sysLine">
+              <div class="light"><span class="led" id="led3"></span> Decision Trace</div>
+              <div class="mono" id="st3">audit-ready</div>
+            </div>
+            <div class="sysLine">
+              <div class="light"><span class="led" id="led4"></span> Fail-safe Mode</div>
+              <div class="mono" id="st4">armed</div>
+            </div>
+          </div>
+
+          <p style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.65;">
+            This is a visual “luxury” touch: calm, controlled, mission-grade signaling.
+          </p>
         </div>
+      </div>
     </section>
 
-    <section class="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>What makes Autonomous.ai stand out?</h3>
-            <p>Our commitment to luxury AI integration, featuring robots and self-driving tech that's second to none.</p>
+    <!-- SIMULATOR -->
+    <section id="simulator" class="section">
+      <h2>Autonomy scenario simulator</h2>
+      <p class="lead">
+        A serious-looking “fun” widget for engagement. Select conditions and generate a decision posture.
+      </p>
+
+      <div class="panel sim">
+        <div class="simRow">
+          <div>
+            <label class="mono" style="font-size:12px;color:var(--muted2);">ENVIRONMENT</label>
+            <select id="env">
+              <option value="low">Low volatility (controlled)</option>
+              <option value="medium" selected>Medium volatility (changing)</option>
+              <option value="high">High volatility (adversarial)</option>
+            </select>
+          </div>
+          <div>
+            <label class="mono" style="font-size:12px;color:var(--muted2);">PRIMARY PRIORITY</label>
+            <select id="prio">
+              <option value="speed">Speed of execution</option>
+              <option value="safety" selected>Safety & reliability</option>
+              <option value="cost">Cost efficiency</option>
+              <option value="governance">Governance & auditability</option>
+            </select>
+          </div>
         </div>
-        <div class="faq-item">
-            <h3>How do I get started?</h3>
-            <p>Contact us to begin your journey into elite autonomy.</p>
+
+        <div class="simRow">
+          <div>
+            <label class="mono" style="font-size:12px;color:var(--muted2);">CONSTRAINTS</label>
+            <select id="cons">
+              <option value="light">Light constraints</option>
+              <option value="standard" selected>Standard constraints</option>
+              <option value="strict">Strict constraints (regulated)</option>
+            </select>
+          </div>
+          <div>
+            <label class="mono" style="font-size:12px;color:var(--muted2);">HUMAN OVERRIDE</label>
+            <select id="hovr">
+              <option value="always" selected>Always available</option>
+              <option value="conditional">Conditional</option>
+              <option value="rare">Rare / emergency only</option>
+            </select>
+          </div>
         </div>
-        <div class="faq-item">
-            <h3>Is customization available?</h3>
-            <p>Yes, every solution is bespoke to your visionary needs.</p>
+
+        <button class="btn primary" type="button" id="runSim" style="width:fit-content;">Generate Posture</button>
+
+        <div class="simOut" id="simOut">
+          Select inputs, then generate a posture. Built to look premium while boosting time-on-page.
         </div>
-        <!-- Add more FAQ items as needed -->
+      </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>For inquiries, send emails to travelair.ai@outlook.com</p>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Investor / partner access</h2>
+      <p class="lead">
+        High-signal inquiries only. No public emails displayed. Form routes to <span class="mono">atonomous.ai@outlook.com</span> via a backend endpoint.
+      </p>
+
+      <div class="panel">
+        <!-- Replace YOUR_FORM_ID after you set up Formspree (instructions below) -->
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="formGrid">
+            <input name="name" placeholder="Name" required />
+            <input name="organization" placeholder="Organization" />
+          </div>
+          <div class="formGrid">
+            <input type="email" name="email" placeholder="Email" required />
+            <input name="role" placeholder="Role (Investor / Partner / Enterprise)" />
+          </div>
+
+          <textarea name="message" placeholder="Message — what are you exploring with autonomy?" required></textarea>
+
+          <!-- honeypot -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="formActions">
+            <button class="btn primary" type="submit">Submit</button>
+            <div class="fine">
+              Private intake. No mailing lists. We respond only if there’s a fit.
+            </div>
+          </div>
+
+          <div class="status" id="formStatus"></div>
+        </form>
+
+        <div class="fine" style="margin-top:14px;">
+          GitHub Pages is static: email delivery requires a form backend (Formspree/Netlify). The site does not expose any email address publicly.
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <h2>FAQ</h2>
+      <p class="lead">Short answers. High signal. Built for serious conversations.</p>
+
+      <div class="faq">
+        <details>
+          <summary>Is ATONOMOUS.AI the same as “autonomous”?</summary>
+          <p>
+            Different brand. Same category. ATONOMOUS.AI is positioned as the luxury layer of autonomy—calm execution, governed intelligence, and deployment realism.
+          </p>
+        </details>
+
+        <details>
+          <summary>What does “luxury autonomy” mean?</summary>
+          <p>
+            It means the system is composed under pressure: reliable, secure, policy-bounded, and engineered for real deployment. Not flashy—inevitable.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is this focused only on vehicles?</summary>
+          <p>
+            No. Mobility is one application. The positioning supports enterprise agents, robotics/devices, and infrastructure autonomy.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do you handle safety and control?</summary>
+          <p>
+            Control is designed into the architecture: policy constraints, decision traces, override mechanisms, and fail-safe modes.
+          </p>
+        </details>
+
+        <details>
+          <summary>Are you open to investors and strategic partners?</summary>
+          <p>
+            Yes—selectively. Use the access form with specifics: your focus area, timeframe, and what autonomy unlocks for you.
+          </p>
+        </details>
+      </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Autonomous.ai – Affiliated with travelair.ai</p>
+      <div>© <span id="year"></span> <span class="mono">ATONOMOUS.AI</span> — The Luxury of Autonomy</div>
+      <div class="mono" style="opacity:.75;">Investor-grade presence • No public emails</div>
     </footer>
+
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('reveal'); });
+    }, {threshold: 0.12});
+    cards.forEach(c => io.observe(c));
+
+    // Autonomy mode presets
+    const presets = {
+      investor: {r:92, a:86, s:94, g:90},
+      enterprise:{r:95, a:82, s:96, g:94},
+      robotics:  {r:89, a:92, s:91, g:86},
+      infrastructure:{r:97, a:78, s:98, g:96}
+    };
+
+    function setBars(p){
+      const clamp = (n)=>Math.max(0,Math.min(100,n));
+      const set = (id,val) => {
+        document.getElementById('v'+id).textContent = clamp(val);
+        document.getElementById('b'+id).style.width = clamp(val)+'%';
+      };
+      set('Reliability', p.r);
+      set('Adaptability', p.a);
+      set('Safety', p.s);
+      set('Governance', p.g);
+    }
+    setBars(presets.investor);
+
+    document.getElementById('modes').addEventListener('click', (e)=>{
+      const chip = e.target.closest('.chip');
+      if(!chip) return;
+      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      setBars(presets[chip.dataset.mode]);
+    });
+
+    // Live system widget (subtle changes, premium feel)
+    const sysStates = [
+      {k:"nominal", led:"ok"},
+      {k:"stable", led:"ok"},
+      {k:"audit-ready", led:"ok"},
+      {k:"armed", led:"warn"}
+    ];
+    const ledEls = [document.getElementById('led1'),document.getElementById('led2'),document.getElementById('led3'),document.getElementById('led4')];
+    const stEls  = [document.getElementById('st1'),document.getElementById('st2'),document.getElementById('st3'),document.getElementById('st4')];
+
+    function pulseSystem(){
+      // mostly green, occasionally yellow for “realism”
+      const roll = Math.random();
+      sysStates[1].k = roll > 0.92 ? "degraded→recovering" : "stable";
+      sysStates[1].led = roll > 0.92 ? "warn" : "ok";
+
+      sysStates[3].k = roll > 0.96 ? "engaged" : "armed";
+      sysStates[3].led = roll > 0.96 ? "warn" : "warn";
+
+      sysStates.forEach((s, i)=>{
+        stEls[i].textContent = s.k;
+        ledEls[i].className = "led" + (s.led==="warn" ? " warn" : s.led==="bad" ? " bad" : "");
+      });
+    }
+    setInterval(pulseSystem, 2600);
+    pulseSystem();
+
+    // Simulator
+    const simOut = document.getElementById('simOut');
+    document.getElementById('runSim').addEventListener('click', ()=>{
+      const env = document.getElementById('env').value;
+      const prio = document.getElementById('prio').value;
+      const cons = document.getElementById('cons').value;
+      const hovr = document.getElementById('hovr').value;
+
+      const envMap = {
+        low: "controlled conditions with predictable variance",
+        medium: "changing conditions with intermittent uncertainty",
+        high: "adversarial volatility with rapid context shifts"
+      };
+      const prioMap = {
+        speed: "optimize for decisive execution with bounded risk checks",
+        safety: "prioritize safe action selection and conservative fallback behaviors",
+        cost: "optimize for efficiency while maintaining minimum safety constraints",
+        governance: "prioritize traceability, policy adherence, and audit-ready decisions"
+      };
+      const consMap = {
+        light: "light constraints (broad action space)",
+        standard: "standard constraints (balanced action space)",
+        strict: "strict constraints (regulated / high compliance)"
+      };
+      const hovrMap = {
+        always: "human override is always available",
+        conditional: "human override is conditional (policy-triggered)",
+        rare: "human override is rare (emergency only)"
+      };
+
+      simOut.innerHTML =
+        <strong style="color:var(--text)">Autonomy posture generated:</strong><br><br> +
+        Environment: <span style="color:var(--text)">${envMap[env]}</span><br> +
+        Priority: <span style="color:var(--text)">${prioMap[prio]}</span><br> +
+        Constraints: <span style="color:var(--text)">${consMap[cons]}</span><br> +
+        Control: <span style="color:var(--text)">${hovrMap[hovr]}</span><br><br> +
+        Recommended posture: <span style="color:var(--text)">calm, governed autonomy</span> — policy-bounded decisions with resilience under pressure.;
+    });
+
+    // Form submit (AJAX premium feel)
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      statusEl.textContent = "Submitting…";
+
+      try{
+        const data = new FormData(form);
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: data,
+          headers: { "Accept": "application/json" }
+        });
+        if(res.ok){
+          form.reset();
+          statusEl.textContent = "Received. We’ll review and respond if there’s a fit.";
+        } else {
+          statusEl.textContent = "Submission failed. Add your form endpoint (Formspree) and try again.";
+        }
+      }catch(err){
+        statusEl.textContent = "Submission error. Check the endpoint and try again.";
+      }
+    });
+
+    // Particle background (luxury motion)
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let w, h, dots;
+
+    function resize(){
+      w = canvas.width = window.innerWidth * devicePixelRatio;
+      h = canvas.height = window.innerHeight * devicePixelRatio;
+      dots = Array.from({length: 95}, ()=>({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        r: (Math.random()*1.2 + .6) * devicePixelRatio,
+        vx: (Math.random()-.5) * .22 * devicePixelRatio,
+        vy: (Math.random()-.5) * .22 * devicePixelRatio,
+        a: Math.random()*0.55 + 0.2
+      }));
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function tick(){
+      ctx.clearRect(0,0,w,h);
+
+      for(const d of dots){
+        d.x += d.vx; d.y += d.vy;
+        if(d.x<0||d.x>w) d.vx *= -1;
+        if(d.y<0||d.y>h) d.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
+        ctx.fillStyle = rgba(124,167,255,${d.a});
+        ctx.fill();
+      }
+
+      for(let i=0;i<dots.length;i++){
+        for(let j=i+1;j<dots.length;j++){
+          const a = dots[i], b = dots[j];
+          const dx = a.x-b.x, dy=a.y-b.y;
+          const dist = Math.hypot(dx,dy);
+          if(dist < 160*devicePixelRatio){
+            const alpha = (1 - dist/(160*devicePixelRatio)) * 0.12;
+            ctx.strokeStyle = rgba(167,240,255,${alpha});
+            ctx.lineWidth = 1 * devicePixelRatio;
+            ctx.beginPath();
+            ctx.moveTo(a.x,a.y);
+            ctx.lineTo(b.x,b.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+    tick();
+  </script>
 </body>
 </html>
